@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      # ddl-auto is used for creating a table(database design lan) if its not present or updating if its present based on the entities.
+      ddl-auto: none
+      # please print all the sql commands
+    show-sql: true
