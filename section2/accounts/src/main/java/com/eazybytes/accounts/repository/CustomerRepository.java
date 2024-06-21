@@ -9,6 +9,10 @@ import java.util.Optional;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
+    /*
+    This method is a derived method which is provided by spring data jpa, and it follows
+    a certain naming convention.
+     */
     Optional<Customer> findByMobileNumber(String mobileNumber);
 
 

@@ -19,6 +19,11 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
+
+/*
+Here all args constructor annotation will generate a constructor for all paramters
+So we don't have to autowire then interface where we need to use the methods.
+ */
 @Service
 @AllArgsConstructor
 public class AccountsServiceImpl  implements IAccountsService {
@@ -48,6 +53,10 @@ public class AccountsServiceImpl  implements IAccountsService {
     private Accounts createNewAccount(Customer customer) {
         Accounts newAccount = new Accounts();
         newAccount.setCustomerId(customer.getCustomerId());
+        /*
+        Since while creating an accounts table we didn't give the logic for
+        setting primary key, so here we've to give custom id.
+         */
         long randomAccNumber = 1000000000L + new Random().nextInt(900000000);
 
         newAccount.setAccountNumber(randomAccNumber);
@@ -74,7 +83,8 @@ public class AccountsServiceImpl  implements IAccountsService {
     }
 
     /**
-     * @param customerDto - CustomerDto Object
+     *
+     * @param customerDto - CustomerDto Object from the user
      * @return boolean indicating if the update of Account details is successful or not
      */
     @Override

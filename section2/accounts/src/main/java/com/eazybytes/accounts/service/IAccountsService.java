@@ -18,7 +18,8 @@ public interface IAccountsService {
     CustomerDto fetchAccount(String mobileNumber);
 
     /**
-     *
+     * This methods takes in the customer details, see if the account number is present in db or not, if found updates the accounts details except for the account number.
+     * Then it updates the customer details as per the input provided the customer id exists
      * @param customerDto - CustomerDto Object
      * @return boolean indicating if the update of Account details is successful or not
      */
