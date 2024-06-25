@@ -8,6 +8,10 @@ import java.util.Optional;
 @Component("auditAwareImpl")
 public class AuditAwareImpl implements AuditorAware<String> {
 
+    /*
+    This class audits the updated by and created by columns in the db but only for the queries that're
+    created through spring data jpa, not for the native queries.
+     */
     /**
      * Returns the current auditor of the application.
      *

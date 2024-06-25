@@ -26,7 +26,7 @@ public interface IAccountsService {
     boolean updateAccount(CustomerDto customerDto);
 
     /**
-     *
+     * Finds the customer using mobile number, if found deletes the account & customer from respective tables.
      * @param mobileNumber - Input Mobile Number
      * @return boolean indicating if the delete of Account details is successful or not
      */
